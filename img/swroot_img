@@ -1,0 +1,41 @@
+#!/bin/sh
+# ./swroot_base -v 11.0 -a arch -t target_arch
+
+set -e
+
+err() {
+    exitval=$1
+    shift
+    echo "$*" 1>&2
+    exit $exitval
+}
+
+_MYDIR=$(dirname `realpath $0`)
+[ ! -f "${_MYDIR}/../cpr.inc" ] && err 1 "Missed cpr.inc in ${_MYDIR}"
+. ${_MYDIR}/../cpr.inc
+
+# MAIN()
+while getopts "v:a:t:n:" opt; do
+	case "${opt}" in
+	    v) _VER="${OPTARG}" ;;
+	    a) _ARCH="${OPTARG}" ;;
+	    t) _TARGET_ARCH="${OPTARG}" ;;
+	    n) _NAME="${OPTARG}" ;;
+	    *)  usage ;;
+	esac
+    shift $(($OPTIND - 1))
+done
+
+[ -z "${_VER}" ] && err 1 "Give me version, e.g: -v 11.0"
+[ -z "${_NAME}" ] && err 1 "Give me name, e.g: -n redmine"
+
+_MASTERLINK="${_NAME}"
+_SLAVELINK="${_MASTERLINK}-slave"
+
+. ${_MYDIR}/../postarg.inc
+
+set +e
+    [ ! -d "${_IMGMYDOCROOT}" ] && mkdir -p ${_IMGMYDOCROOT}
+set -e
+
+${miscdir}/misc/symlink_changer -p ${_IMGMYDOCROOT} -r "${_MASTERLINK}-1 ${_MASTERLINK}-2" -s ${_SLAVELINK} -m ${_MASTERLINK} -a next

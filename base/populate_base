@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+err() {
+    exitval=$1
+    shift
+    echo "$*" 1>&2
+    exit $exitval
+}
+
+_MYDIR=$(dirname `realpath $0`)
+[ ! -f "${_MYDIR}/../cpr.inc" ] && err 1 "Missed cpr.inc in ${_MYDIR}"
+. ${_MYDIR}/../cpr.inc
+
+# MAIN()
+while getopts "v:a:t:s:" opt; do
+	case "${opt}" in
+	    v) ver="${OPTARG}" ;;
+	    a) oarch="${OPTARG}" ;;
+	    t) targetarch="${OPTARG}" ;;
+	    s) STABLE="${OPTARG}" ;;
+	    *) usage ;;
+	esac
+    shift $(($OPTIND - 1))
+done
+
+[ -z "${ver}" ] && err 1 "Give me version, e.g: -v 10.0"
+
+. ${_MYDIR}/../build.inc
+. ${_MYDIR}/../postarg.inc
+
+set +e
+    [ ! -d "${_MYDOCROOT}" ] && mkdir -p ${_MYDOCROOT}
+set -e
+
+FOLDERS="${ver} ${ver}-1 ${ver}-2 ${ver}-slave"
+
+for i in ${_HST}; do
+	echo $i
+	DST_DIR="${_REMOTEDOCROOT}/releases/${FHIER}"
+	ssh ${i} -C "mkdir -p ${DST_DIR} 2>/dev/null"
+	for n in ${FOLDERS}; do
+	#    /usr/local/bin/rsync -avz4 -lHt --delete-after --password-file=/root/etc/cbsd.secrets ${_DOCROOTBASE}/${n} rsync://cbsd@${i}/dl.bsdstore.ru/releases/${FHIER}
+#	    set -x xtrace
+	    rsync -avz4 -e ssh -lHt --delete-after ${_DOCROOTBASE}/${FHIER}/${n} root@${i}:${DST_DIR}/
+#	    set +x xtrace
+	done
+done

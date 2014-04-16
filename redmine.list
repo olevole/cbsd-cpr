@@ -1,0 +1,12 @@
+#/usr/ports/lang/gcc46
+/usr/ports/databases/mariadb55-server
+/usr/ports/devel/subversion
+/usr/ports/devel/git
+/usr/ports/databases/rubygem-mysql2
+/usr/ports/databases/rubygem-activerecord-mysql-adapter
+/usr/ports/databases/rubygem-mysql
+/usr/ports/www/apache24
+/usr/ports/devel/ruby-gems
+/usr/ports/devel/rubygem-rake
+/usr/ports/sysutils/rubygem-bundler
+/usr/ports/www/redmine
