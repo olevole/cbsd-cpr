@@ -6,3 +6,6 @@
 /usr/ports/www/pecl-zendopcache
 /usr/ports/net/phpldapadmin
 /usr/ports/sysutils/ldapvi
+/usr/ports/security/pam_mkhomedir
+/usr/ports/security/pam_ldap
+/usr/ports/net/nss_ldap
