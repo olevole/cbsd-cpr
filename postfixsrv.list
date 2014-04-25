@@ -1,0 +1,7 @@
+/usr/ports/lang/php55
+/usr/ports/databases/mariadb55-server
+/usr/ports/www/nginx-devel
+/usr/ports/www/php55-opcache
+/usr/ports/mail/postfixadmin
+/usr/ports/mail/postfix-current
+/usr/ports/mail/spamassassin
