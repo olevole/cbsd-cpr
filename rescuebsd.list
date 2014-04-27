@@ -57,7 +57,7 @@
 /usr/ports/security/proxytunnel
 /usr/ports/net/tsocks
 /usr/ports/databases/mysql55-client
-/usr/ports/databases/postgresql92-client
+/usr/ports/databases/postgresql93-client
 /usr/ports/net/radiusclient
 /usr/ports/security/radiusniff
 /usr/ports/net/samba36
@@ -95,7 +95,6 @@
 /usr/ports/security/authforce
 /usr/ports/security/nikto
 /usr/ports/net-mgmt/angst
-/usr/ports/net-mgmt/echolot
 /usr/ports/net/tcpflow
 /usr/ports/net/tcptrace
 #/usr/ports/net-mgmt/clog
