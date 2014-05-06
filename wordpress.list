@@ -2,7 +2,5 @@
 /usr/ports/www/php55-opcache
 /usr/ports/www/mod_php55
 /usr/ports/databases/mysql55-server
-/usr/ports/misc/mc
-/usr/ports/www/nginx-devel
 /usr/ports/www/wordpress
 
