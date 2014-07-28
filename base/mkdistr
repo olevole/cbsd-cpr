@@ -4,10 +4,10 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 set -e
 
 err() {
-    exitval=$1
-    shift
-    echo "$*" 1>&2
-    exit $exitval
+	exitval=$1
+	shift
+	echo "$*" 1>&2
+	exit $exitval
 }
 
 _MYDIR=$(dirname `realpath $0`)
@@ -16,14 +16,14 @@ _MYDIR=$(dirname `realpath $0`)
 
 # MAIN()
 while getopts "v:a:t:s:" opt; do
-        case "${opt}" in
-            v) ver="${OPTARG}" ;;
-            a) oarch="${OPTARG}" ;;
-            t) targetarch="${OPTARG}" ;;
-	    s) STABLE="${OPTARG}" ;;
-            *) usage ;;
-        esac
-    shift $(($OPTIND - 1))
+	case "${opt}" in
+		v) ver="${OPTARG}" ;;
+		a) oarch="${OPTARG}" ;;
+		t) targetarch="${OPTARG}" ;;
+		s) STABLE="${OPTARG}" ;;
+		*) usage ;;
+	esac
+	shift $(($OPTIND - 1))
 done
 
 [ -z "${ver}" ] && err 1 "Give me version, e.g: -v 11.0"
@@ -37,13 +37,14 @@ _SLAVELINK="${_MASTERLINK}-slave"
 . ${_MYDIR}/../postarg.inc
 
 set +e
-    [ ! -d "${_MYDOCROOT}" ] && mkdir -p ${_MYDOCROOT}
+	[ ! -d "${_MYDOCROOT}" ] && mkdir -p ${_MYDOCROOT}
 set -e
 
 DST_DIR="${_MYDOCROOT}/${_SLAVELINK}"
 
 set +e
-    [ ! -h "${DST_DIR}" ] && ${_MYDIR}/swroot_base -v "${ver}" -a "${arch}" -t "${targetarch}"
+	[ ! -h "${DST_DIR}" ] && ${_MYDIR}/swroot_base -v "${ver}" -a "${arch}" -t "${targetarch}"
 set -e
 
 cbsd mkdistribution ver=${ver} arch="${arch}" targetarch="${targetarch}" dstdir=${DST_DIR}
+cbsd mkdistribution distribution="kernel" name="BFS" ver=${ver} arch="${arch}" targetarch="${targetarch}" dstdir=${DST_DIR}

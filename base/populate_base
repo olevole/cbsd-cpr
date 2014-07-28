@@ -3,10 +3,10 @@
 set -e
 
 err() {
-    exitval=$1
-    shift
-    echo "$*" 1>&2
-    exit $exitval
+	exitval=$1
+	shift
+	echo "$*" 1>&2
+	exit $exitval
 }
 
 _MYDIR=$(dirname `realpath $0`)
@@ -16,13 +16,13 @@ _MYDIR=$(dirname `realpath $0`)
 # MAIN()
 while getopts "v:a:t:s:" opt; do
 	case "${opt}" in
-	    v) ver="${OPTARG}" ;;
-	    a) oarch="${OPTARG}" ;;
-	    t) targetarch="${OPTARG}" ;;
-	    s) STABLE="${OPTARG}" ;;
-	    *) usage ;;
+		v) ver="${OPTARG}" ;;
+		a) oarch="${OPTARG}" ;;
+		t) targetarch="${OPTARG}" ;;
+		s) STABLE="${OPTARG}" ;;
+		*) usage ;;
 	esac
-    shift $(($OPTIND - 1))
+	shift $(($OPTIND - 1))
 done
 
 [ -z "${ver}" ] && err 1 "Give me version, e.g: -v 10.0"
@@ -31,7 +31,7 @@ done
 . ${_MYDIR}/../postarg.inc
 
 set +e
-    [ ! -d "${_MYDOCROOT}" ] && mkdir -p ${_MYDOCROOT}
+	[ ! -d "${_MYDOCROOT}" ] && mkdir -p ${_MYDOCROOT}
 set -e
 
 FOLDERS="${ver} ${ver}-1 ${ver}-2 ${ver}-slave"

@@ -35,7 +35,7 @@
 /usr/ports/net-p2p/ktorrent
 /usr/ports/audio/lame
 /usr/ports/editors/libreoffice
-/usr/ports/net/linphone-base
+/usr/ports/net/linphone
 /usr/ports/www/linux-f10-flashplugin11
 /usr/ports/www/lynx
 /usr/ports/misc/mc
@@ -70,3 +70,5 @@
 /usr/ports/net-im/ekiga
 /usr/ports/net-im/venom
 /usr/ports/sysutils/ansible
+/usr/ports/textproc/dict
+/usr/ports/graphics/blender
