@@ -72,3 +72,5 @@
 /usr/ports/sysutils/ansible
 /usr/ports/textproc/dict
 /usr/ports/graphics/blender
+/usr/ports/dns/bind-tools
+/usr/ports/security/clusterssh
