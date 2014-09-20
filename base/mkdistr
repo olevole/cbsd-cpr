@@ -31,6 +31,9 @@ done
 
 . ${_MYDIR}/../build.inc
 
+# TARGET_ARCH defined in init_target_arch from include via build.inc
+[ -z "${targetarch}" ] && targetarch="${TARGET_ARCH}"
+
 _MASTERLINK="${ver}"
 _SLAVELINK="${_MASTERLINK}-slave"
 

@@ -3,10 +3,10 @@
 set -e
 
 err() {
-    exitval=$1
-    shift
-    echo "$*" 1>&2
-    exit $exitval
+	exitval=$1
+	shift
+	echo "$*" 1>&2
+	exit $exitval
 }
 
 _MYDIR=$(dirname `realpath $0`)
@@ -15,18 +15,18 @@ _MYDIR=$(dirname `realpath $0`)
 
 # MAIN()
 while getopts "v:a:m:n:r:c:p:s:" opt; do
-        case "${opt}" in
-	v) _VER="${OPTARG}" ;;
-	a) oarch="${OPTARG}" ;;
-	m) _MASTERLINK="${OPTARG}" ;;
-	n) _NEW="${OPTARG}" ;;
-	r) _REPOVERION="${OPTARG}" ;;
-	c) _MAKECONF="${OPTARG}" ;;
-	p) _PAUSE="1" ;;
-	s) STABLE="${OPTARG}" ;;
-	*)  usage ;;
-        esac
-        shift $(($OPTIND - 1))
+	case "${opt}" in
+		v) _VER="${OPTARG}" ;;
+		a) oarch="${OPTARG}" ;;
+		m) _MASTERLINK="${OPTARG}" ;;
+		n) _NEW="${OPTARG}" ;;
+		r) _REPOVERION="${OPTARG}" ;;
+		c) _MAKECONF="${OPTARG}" ;;
+		p) _PAUSE="1" ;;
+		s) STABLE="${OPTARG}" ;;
+		*)  usage ;;
+	esac
+	shift $(($OPTIND - 1))
 done
 
 [ -z "${_VER}" ] && err 1 "Give me version, e.g: -v 10.0"
@@ -37,14 +37,14 @@ _SLAVELINK="${_MASTERLINK}-slave"
 _MAKECONF="${_MASTERLINK}_make.conf"
 
 if [ ! -f "${_MAKECONF}" ]; then
-    printf "No such make conf ${_MAKECONF}. Sleep for 10 seconds if its ok or interrupt process"
-    for i in `jot 10`; do
+	printf "No such make conf ${_MAKECONF}. Sleep for 10 seconds if its ok or interrupt process"
+	for i in $( jot 10 ) do
 	sleep 1
 	printf "."
-    done
-    MAKECONFARG=""
+	done
+	MAKECONFARG=""
 else
-    MAKECONFARG="makeconf=${_MYDIR}/${_MASTERLINK}_make.conf"
+	MAKECONFARG="makeconf=${_MYDIR}/${_MASTERLINK}_make.conf"
 fi
 
 _PATH="${_DOCROOTPKGBASE}/${arch}/${_VER}"
