@@ -38,9 +38,9 @@ _MAKECONF="${_MASTERLINK}_make.conf"
 
 if [ ! -f "${_MAKECONF}" ]; then
 	printf "No such make conf ${_MAKECONF}. Sleep for 10 seconds if its ok or interrupt process"
-	for i in $( jot 10 ) do
-	sleep 1
-	printf "."
+	for i in $( jot 10 ); do
+		sleep 1
+		printf "."
 	done
 	MAKECONFARG=""
 else
