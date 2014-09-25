@@ -74,3 +74,8 @@
 /usr/ports/graphics/blender
 /usr/ports/dns/bind-tools
 /usr/ports/security/clusterssh
+/usr/ports/deskutils/virt-manager
+/usr/ports/multimedia/mplayer
+/usr/ports/emulators/dynagen
+/usr/ports/emulators/gns3
+/usr/ports/www/icedtea-web
