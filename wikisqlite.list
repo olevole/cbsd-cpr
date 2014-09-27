@@ -1,8 +1,6 @@
 /usr/ports/www/php55-opcache
 /usr/ports/www/nginx-devel
 /usr/ports/www/xcache
-/usr/ports/lang/ocaml
-/usr/ports/print/latex
 /usr/ports/graphics/ImageMagick
 /usr/ports/print/ghostscript9-nox11
 /usr/ports/databases/php55-pdo_sqlite
