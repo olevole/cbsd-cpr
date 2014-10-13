@@ -1,4 +1,4 @@
-/usr/ports/lang/php55
+/usr/ports/lang/php56
 /usr/ports/sysutils/cbsd
 /usr/ports/www/nginx-devel
 /usr/ports/x11/xorg-minimal
@@ -11,5 +11,5 @@
 /usr/ports/x11-fonts/cantarell-fonts
 /usr/ports/x11-fonts/dejavu
 /usr/ports/x11-fonts/droid-fonts-ttf
-/usr/ports/devel/php55-json
+/usr/ports/devel/php56-json
 /usr/ports/x11-wm/fluxbox
