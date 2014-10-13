@@ -5,6 +5,7 @@
 ###
 /usr/ports/www/php55-opcache
 /usr/ports/ftp/php55-ftp
+/usr/ports/www/mod_php55
 /usr/ports/graphics/pecl-imagick
 #/usr/ports/editors/libreoffice
 /usr/ports/net/samba-smbclient

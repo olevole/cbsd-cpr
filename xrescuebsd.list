@@ -126,3 +126,4 @@
 /usr/ports/x11/xorg
 /usr/ports/multimedia/libva-intel-driver
 /usr/ports/www/nspluginwrapper
+/usr/ports/dns/bind-tools
