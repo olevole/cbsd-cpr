@@ -79,10 +79,10 @@
 #/usr/ports/net-mgmt/isic
 /usr/ports/net/ipsorc
 /usr/ports/security/fragroute
-/usr/ports/security/fragrouter
+#/usr/ports/security/fragrouter
 /usr/ports/security/strobe
 /usr/ports/security/ddos_scan
-/usr/ports/net/thcrut
+#/usr/ports/net/thcrut
 /usr/ports/security/amap
 /usr/ports/security/hackbot
 /usr/ports/security/hmap
