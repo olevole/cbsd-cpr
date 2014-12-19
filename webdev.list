@@ -1,8 +1,9 @@
 /usr/ports/lang/php56
+/usr/ports/lang/lua52
 /usr/ports/sysutils/cbsd
 /usr/ports/www/nginx-devel
 /usr/ports/x11/xorg-minimal
-/usr/ports/www/opera
+/usr/ports/www/webkit-qt4
 /usr/ports/x11-fonts/ubuntu-font
 /usr/ports/x11-fonts/webfonts
 /usr/ports/x11-fonts/artwiz-fonts
