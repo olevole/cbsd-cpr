@@ -50,4 +50,4 @@ set +e
 set -e
 
 cbsd mkdistribution ver=${ver} arch="${arch}" targetarch="${targetarch}" dstdir=${DST_DIR}
-cbsd mkdistribution distribution="kernel" name="BFS" ver=${ver} arch="${arch}" targetarch="${targetarch}" dstdir=${DST_DIR}
+#cbsd mkdistribution distribution="kernel" name="BFS" ver=${ver} arch="${arch}" targetarch="${targetarch}" dstdir=${DST_DIR}
